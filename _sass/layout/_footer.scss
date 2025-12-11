@@ -1,137 +1,76 @@
 .site-footer {
-  background: $color-primary-dark;
-  color: $color-white;
-  padding: $spacing-3xl 0 $spacing-xl;
+  background: #1a365d;
+  color: #ffffff;
+  padding: 2rem 1.5rem;
 
   a {
-    color: $color-white;
+    color: rgba(255, 255, 255, 0.9);
     text-decoration: none;
-    transition: color $transition-fast;
+    transition: color 0.2s ease;
 
     &:hover {
-      color: $color-accent-light;
+      color: #e53e3e;
     }
   }
 }
 
-.footer-content {
-  @include container;
-  display: grid;
-  gap: $spacing-2xl;
-  margin-bottom: $spacing-2xl;
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
 
-  @include md {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @include lg {
-    grid-template-columns: repeat(4, 1fr);
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+    gap: 2rem;
   }
 }
 
-.footer-section {
-  h4 {
-    color: $color-white;
-    font-size: $font-size-lg;
-    margin-bottom: $spacing-lg;
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  
+  @media (min-width: 768px) {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
   }
+}
 
-  p,
-  li {
-    color: rgba($color-white, 0.9);
-    line-height: $line-height-relaxed;
-  }
+.footer-logo {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: #ffffff;
+}
 
-  ul {
-    list-style: none;
-    padding: 0;
-
-    li {
-      margin-bottom: $spacing-sm;
-    }
-  }
+.footer-tagline {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .footer-contact {
-  .contact-item {
-    display: flex;
-    align-items: flex-start;
-    gap: $spacing-md;
-    margin-bottom: $spacing-md;
-
-    svg,
-    .icon {
-      flex-shrink: 0;
-      width: 20px;
-      height: 20px;
-      color: $color-accent;
-      margin-top: 2px;
-    }
-  }
-}
-
-.footer-social {
   display: flex;
-  gap: $spacing-md;
-  margin-top: $spacing-lg;
-
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.9375rem;
+  
   a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background: rgba($color-white, 0.1);
-    border-radius: $radius-full;
-    transition: all $transition-fast;
-
-    &:hover {
-      background: $color-accent;
-      transform: translateY(-2px);
-    }
-
-    svg {
-      width: 20px;
-      height: 20px;
-    }
+    color: rgba(255, 255, 255, 0.9);
   }
 }
 
-.footer-bottom {
-  @include container;
-  padding-top: $spacing-xl;
-  border-top: 1px solid rgba($color-white, 0.1);
-  text-align: center;
-  color: rgba($color-white, 0.7);
-  font-size: $font-size-sm;
-
-  @include md {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: left;
-  }
-
-  p {
-    margin: 0;
-  }
+.footer-divider {
+  color: rgba(255, 255, 255, 0.3);
 }
 
-.footer-links {
-  display: flex;
-  gap: $spacing-lg;
-  margin-top: $spacing-md;
-
-  @include md {
-    margin-top: 0;
-  }
-
-  a {
-    color: rgba($color-white, 0.7);
-    font-size: $font-size-sm;
-
-    &:hover {
-      color: $color-white;
-    }
-  }
+.footer-copyright {
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.6);
 }
