@@ -8,104 +8,95 @@
   background: #1a365d;
   
   @media (min-width: 768px) {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 50% 50%;
     min-height: 90vh;
   }
   
-  &__content {
+  @media (min-width: 1200px) {
+    grid-template-columns: 45% 55%;
+  }
+  
+  &__brand {
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
-    padding: 3rem 1.5rem;
+    padding: 2rem 1.5rem;
     color: #ffffff;
+    text-align: center;
     
     @media (min-width: 768px) {
-      padding: 4rem 3rem;
+      padding: 2rem;
     }
     
     @media (min-width: 1024px) {
-      padding: 4rem 4rem 4rem 6rem;
+      padding: 2rem 3rem;
     }
   }
   
-  &__logo {
-    margin-bottom: 2.5rem;
+  &__logo-circle {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    width: 240px;
+    height: 240px;
+    background: #ffffff;
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
     
     @media (min-width: 768px) {
-      justify-content: flex-start;
+      width: 280px;
+      height: 280px;
+      margin-bottom: 1.5rem;
+    }
+    
+    @media (min-width: 1024px) {
+      width: 340px;
+      height: 340px;
+      padding: 2rem;
+    }
+    
+    @media (min-width: 1200px) {
+      width: 380px;
+      height: 380px;
     }
     
     img {
-      width: 180px;
-      height: auto;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
       display: block;
-      padding: 20px;
-      background: radial-gradient(circle, rgba(229, 62, 62, 0.15) 0%, transparent 70%);
-      border-radius: 50%;
-      box-shadow: 0 0 40px rgba(229, 62, 62, 0.3),
-                  0 0 80px rgba(229, 62, 62, 0.2),
-                  0 0 120px rgba(229, 62, 62, 0.1);
-      animation: glow-pulse 3s ease-in-out infinite;
-      
-      // Respect user's motion preferences
-      @media (prefers-reduced-motion: reduce) {
-        animation: none;
-      }
-      
-      @media (min-width: 768px) {
-        width: 220px;
-        padding: 25px;
-      }
-      
-      @media (min-width: 1024px) {
-        width: 250px;
-        padding: 30px;
-      }
     }
-  }
-  
-  @keyframes glow-pulse {
-    0%, 100% {
-      box-shadow: 0 0 40px rgba(229, 62, 62, 0.3),
-                  0 0 80px rgba(229, 62, 62, 0.2),
-                  0 0 120px rgba(229, 62, 62, 0.1);
-    }
-    50% {
-      box-shadow: 0 0 50px rgba(229, 62, 62, 0.4),
-                  0 0 100px rgba(229, 62, 62, 0.3),
-                  0 0 150px rgba(229, 62, 62, 0.15);
-    }
-  }
-  
-  &__title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 800;
-    line-height: 1.1;
-    margin-bottom: 1.5rem;
   }
   
   &__subtitle {
-    font-size: clamp(1.125rem, 2vw, 1.375rem);
+    font-size: clamp(0.95rem, 1.8vw, 1.125rem);
     line-height: 1.6;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     opacity: 0.95;
+    max-width: 380px;
+    
+    @media (min-width: 768px) {
+      margin-bottom: 1.5rem;
+    }
   }
   
   &__image {
-    min-height: 300px;
+    min-height: 250px;
+    order: -1;
     
     @media (min-width: 768px) {
       min-height: auto;
+      order: 0;
     }
     
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center top;
     }
   }
 }
