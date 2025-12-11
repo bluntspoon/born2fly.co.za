@@ -161,8 +161,11 @@
   transition: all 0.3s ease;
   box-shadow: 0 4px 14px rgba(229, 62, 62, 0.4);
   
-  &:hover {
+  &:hover,
+  &:focus,
+  &:active {
     background: #c53030;
+    color: #ffffff;
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(229, 62, 62, 0.5);
   }
@@ -170,8 +173,11 @@
   &--light {
     background: #ffffff;
     color: #e53e3e;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
     
-    &:hover {
+    &:hover,
+    &:focus,
+    &:active {
       background: #f7fafc;
       color: #c53030;
     }

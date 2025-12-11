@@ -26,9 +26,12 @@
     color: $color-white;
     border-color: $color-accent;
 
-    &:hover {
+    &:hover,
+    &:focus,
+    &:active {
       background: $color-accent-dark;
       border-color: $color-accent-dark;
+      color: $color-white;
       transform: translateY(-2px);
       box-shadow: $shadow-lg;
     }
@@ -44,9 +47,12 @@
     color: $color-white;
     border-color: $color-primary;
 
-    &:hover {
+    &:hover,
+    &:focus,
+    &:active {
       background: $color-primary-light;
       border-color: $color-primary-light;
+      color: $color-white;
       transform: translateY(-2px);
       box-shadow: $shadow-lg;
     }
@@ -84,9 +90,12 @@
     color: $color-white;
     border-color: #25d366;
 
-    &:hover {
+    &:hover,
+    &:focus,
+    &:active {
       background: #20ba59;
       border-color: #20ba59;
+      color: $color-white;
       transform: translateY(-2px);
       box-shadow: $shadow-lg;
     }
