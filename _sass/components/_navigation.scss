@@ -24,11 +24,11 @@
   flex-shrink: 0;
 
   img {
-    height: 40px;
+    height: 60px;
     width: auto;
 
     @include md {
-      height: 50px;
+      height: 80px;
     }
   }
 }

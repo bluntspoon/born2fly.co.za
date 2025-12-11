@@ -28,6 +28,58 @@
     }
   }
   
+  &__logo {
+    margin-bottom: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    @media (min-width: 768px) {
+      justify-content: flex-start;
+    }
+    
+    img {
+      width: 180px;
+      height: auto;
+      display: block;
+      padding: 20px;
+      background: radial-gradient(circle, rgba(229, 62, 62, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
+      box-shadow: 0 0 40px rgba(229, 62, 62, 0.3),
+                  0 0 80px rgba(229, 62, 62, 0.2),
+                  0 0 120px rgba(229, 62, 62, 0.1);
+      animation: glow-pulse 3s ease-in-out infinite;
+      
+      // Respect user's motion preferences
+      @media (prefers-reduced-motion: reduce) {
+        animation: none;
+      }
+      
+      @media (min-width: 768px) {
+        width: 220px;
+        padding: 25px;
+      }
+      
+      @media (min-width: 1024px) {
+        width: 250px;
+        padding: 30px;
+      }
+    }
+  }
+  
+  @keyframes glow-pulse {
+    0%, 100% {
+      box-shadow: 0 0 40px rgba(229, 62, 62, 0.3),
+                  0 0 80px rgba(229, 62, 62, 0.2),
+                  0 0 120px rgba(229, 62, 62, 0.1);
+    }
+    50% {
+      box-shadow: 0 0 50px rgba(229, 62, 62, 0.4),
+                  0 0 100px rgba(229, 62, 62, 0.3),
+                  0 0 150px rgba(229, 62, 62, 0.15);
+    }
+  }
+  
   &__title {
     font-family: 'Montserrat', sans-serif;
     font-size: clamp(2rem, 5vw, 3.5rem);
