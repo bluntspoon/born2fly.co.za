@@ -1,83 +1,33 @@
 ---
 layout: home
-title: Born2Fly Gymnastics | Adaptive Gymnastics for Every Child in KwaZulu-Natal
-description: "Specialist adaptive gymnastics services bringing confidence, hope, and possibilities to children of all abilities across KwaZulu-Natal schools."
+title: Born2Fly Gymnastics | Book a Free Trial Class in KZN
+description: "Give your child the gift of confidence and movement. Book a free trial for our specialist adaptive gymnastics programs across KwaZulu-Natal."
 ---
 
-<!-- Hero Carousel Section -->
-<section class="hero-carousel">
-  <div class="carousel">
-    <div class="carousel-track">
-      {% for image in site.data.carousel %}
-      <div class="carousel-slide">
-        <img
-          src="{{ image.src | relative_url }}"
-          alt="{{ image.alt }}"
-          {% if forloop.first %}fetchpriority="high"{% else %}loading="lazy"{% endif %}
-        >
-        <div class="carousel-overlay"></div>
-      </div>
-      {% endfor %}
+<!-- Hero Focus Section -->
+<section class="hero-focus">
+  <div class="hero-focus-image">
+    <img
+      src="{{ '/assets/images/carousel/hero-bg-1.jpg' | relative_url }}"
+      alt="Child succeeding in gymnastics at Born2Fly"
+      fetchpriority="high"
+    >
+    <div class="hero-focus-overlay"></div>
+  </div>
+
+  <div class="hero-focus-content">
+    <div class="hero-badges">
+      <span class="badge">Gymnastics SA Certified</span>
+      <span class="badge">Trusted Across KZN</span>
     </div>
-
-    <div class="hero-carousel-content">
-      <div class="hero-kicker animate-on-load animate-delay-1">
-        <span class="kicker-badge">Trusted by Schools Across KZN</span>
-        <span class="kicker-stat">Gymnastics SA Certified</span>
-      </div>
-      <h1 class="hero-title animate-on-load animate-delay-2">Where Every Child Can Fly</h1>
-      <p class="hero-subtitle animate-on-load animate-delay-3">Specialist gymnastics bringing confidence, hope, and endless possibilities to children of all abilities across KwaZulu-Natal</p>
-      <div class="hero-cta animate-on-load animate-delay-4">
-        <a href="{{ '/contact/' | relative_url }}" class="btn btn-primary btn-lg">Get in Touch Today</a>
-        <a href="{{ '/services/' | relative_url }}" class="hero-link">
-          Explore Our Services
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M7 3l7 7-7 7"/>
-          </svg>
-        </a>
-      </div>
-    </div>
-
-    <button class="carousel-btn carousel-btn-prev" aria-label="Previous slide">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M15 18l-6-6 6-6"/>
-      </svg>
-    </button>
-
-    <button class="carousel-btn carousel-btn-next" aria-label="Next slide">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M9 18l6-6-6-6"/>
-      </svg>
-    </button>
-
-    <div class="carousel-dots">
-      {% for image in site.data.carousel %}
-      <button class="carousel-dot{% if forloop.first %} active{% endif %}" aria-label="Go to slide {{ forloop.index }}"></button>
-      {% endfor %}
-    </div>
-
-    <button class="carousel-pause" aria-label="Pause carousel" aria-pressed="false">
-      <svg class="icon-pause" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-        <rect x="5" y="4" width="3" height="12" rx="1"/>
-        <rect x="12" y="4" width="3" height="12" rx="1"/>
-      </svg>
-      <svg class="icon-play" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-        <path d="M6 4l10 6-10 6V4z"/>
-      </svg>
-    </button>
-
-    <div class="scroll-indicator" aria-hidden="true">
-      <span class="scroll-text">Scroll to explore</span>
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M12 5v14M5 12l7 7 7-7"/>
-      </svg>
-    </div>
-
-    <div class="sr-only" aria-live="polite" aria-atomic="true" id="carousel-announcer">
-      Slide 1 of {{ site.data.carousel.size }}
-    </div>
+    <h1 class="hero-focus-title">Give Your Child the Gift of Flight</h1>
+    <p class="hero-focus-subtitle">Book a free, no-obligation trial class today. Watch your child discover confidence, strength, and joy through adaptive gymnastics.</p>
+    <a href="#trial-form" class="btn btn-primary btn-lg btn-hero">Claim Your Free Trial</a>
   </div>
 </section>
+
+<!-- Lead Capture Form Section -->
+{% include trial-form.html %}
 
 <!-- Value Proposition Section -->
 <section class="section section--light">
