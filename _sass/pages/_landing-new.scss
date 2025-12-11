@@ -6,6 +6,15 @@
   display: grid;
   min-height: 100vh;
   background: #1a365d;
+  position: relative;
+  overflow: hidden;
+  
+  // Mobile: Image as background behind content
+  @media (max-width: 767px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
   
   @media (min-width: 768px) {
     grid-template-columns: 50% 50%;
@@ -24,6 +33,14 @@
     padding: 2rem 1.5rem;
     color: #ffffff;
     text-align: center;
+    position: relative;
+    z-index: 2;
+    
+    // Mobile: Full viewport with background image behind
+    @media (max-width: 767px) {
+      min-height: 100vh;
+      padding: 3rem 1.5rem;
+    }
     
     @media (min-width: 768px) {
       padding: 2rem;
@@ -38,18 +55,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 240px;
-    height: 240px;
+    width: 220px;
+    height: 220px;
     background: #ffffff;
     border-radius: 50%;
     margin-bottom: 1.5rem;
-    padding: 1.5rem;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    padding: 1.25rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
     
     @media (min-width: 768px) {
       width: 280px;
       height: 280px;
       margin-bottom: 1.5rem;
+      padding: 1.5rem;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
     }
     
     @media (min-width: 1024px) {
@@ -78,18 +97,45 @@
     opacity: 0.95;
     max-width: 380px;
     
+    // Mobile: Add text shadow for readability over background
+    @media (max-width: 767px) {
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    }
+    
     @media (min-width: 768px) {
       margin-bottom: 1.5rem;
     }
   }
   
   &__image {
-    min-height: 250px;
-    order: -1;
+    // Mobile: Absolute positioned background
+    @media (max-width: 767px) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 0;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(26, 54, 93, 0.85) 0%,
+          rgba(26, 54, 93, 0.75) 50%,
+          rgba(26, 54, 93, 0.9) 100%
+        );
+        z-index: 1;
+      }
+    }
     
     @media (min-width: 768px) {
       min-height: auto;
-      order: 0;
     }
     
     img {
