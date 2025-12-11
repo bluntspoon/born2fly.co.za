@@ -90,6 +90,20 @@
     }
   }
   
+  &__tagline {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    font-weight: 700;
+    font-style: italic;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    
+    @media (min-width: 768px) {
+      margin-bottom: 1.25rem;
+    }
+  }
+  
   &__subtitle {
     font-size: clamp(0.95rem, 1.8vw, 1.125rem);
     line-height: 1.6;

@@ -4,7 +4,7 @@
   z-index: $z-sticky;
   background: $color-white;
   box-shadow: $shadow-md;
-  padding: $spacing-xs 0;
+  padding: 2px 0;
 
   @include md {
     padding: $spacing-lg 0;
@@ -19,9 +19,15 @@
   gap: $spacing-xl;
 }
 
+.site-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+
 .site-logo {
   display: block;
-  flex-shrink: 0;
 
   img {
     height: 65px;
@@ -34,6 +40,24 @@
     @include lg {
       height: 117px;
     }
+  }
+}
+
+.site-tagline {
+  font-family: $font-heading;
+  font-size: 0.65rem;
+  font-weight: $font-weight-semibold;
+  color: $color-primary;
+  font-style: italic;
+  margin-top: 2px;
+  letter-spacing: 0.02em;
+  
+  @include md {
+    font-size: 0.75rem;
+  }
+  
+  @include lg {
+    font-size: 0.85rem;
   }
 }
 
